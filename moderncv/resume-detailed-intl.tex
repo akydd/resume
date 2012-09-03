@@ -1,0 +1,177 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,letterpaper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{casual}                        % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                          % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}    % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                  % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                         % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+\setlength{\hintscolumnwidth}{3cm}           % if you want to change the width of the column with the dates
+%\setlength{\maketitlenamewidth}{10cm}        % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\firstname{Alan}
+\familyname{Kydd}
+\title{Software developer}               % optional, remove the line if not wanted
+\address{1428-330 Clareview Station Drive}{Edmonton, Alberta  T5Y 0E6, Canada}    % optional, remove the line if not wanted
+\mobile{+1 780 232 7870}                     % optional, remove the line if not wanted
+\phone{+1 780 669 9665}                      % optional, remove the line if not wanted
+%\fax{+3~(456)~789~012}                        % optional, remove the line if not wanted
+\email{akydd@ualberta.net}                          % optional, remove the line if not wanted
+\homepage{https://github.com/akydd}                    % optional, remove the line if not wanted
+%\extrainfo{additional information}            % optional, remove the line if not wanted
+%\photo[64pt][0.4pt]{picture}                  % '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%\quote{Some quote (optional)}                 % optional, remove the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                     % to typeset your resume in Chinese using CJK
+\maketitle
+
+%\section{Summary}
+%\cvitem{}{Skilled programmer with over 2 years of software development
+%experience in a small business and in large international corporations. 
+%Current software development experience with Java EE, Struts and Hibernate.
+%Also enjoys programming in C and with Ruby on Rails.}
+
+\section{Current Skills}
+\cvitem{Programming languages}{Intermediate Java and SQL, basic C/C++, Perl, and
+Ruby}
+\cvitem{Framworks and libraries}{Intermediate Struts, Spring and Hibernate,
+basic Ruby on Rails and RSpec}
+\cvitem{Software}{Eclipse, RAD, DB2, Websphere and Tomcat app servers,
+Subversion, Git}
+
+
+\section{Professional Experience}
+%\subsection{Vocational}
+\cventry{10/2011--present}{Consultant}{CGI Canada}{Edmonton}{Alberta}
+{\begin{itemize}%
+\item Designed and coded, using TDD, 5 major enhancements for a multi-tiered
+J2EE web application currently active in a public sector IT environment.
+Coding spanned the presentation, business logic, service, data access and
+database layers. 
+\item Technology used: Java, Struts, Hibernate, Spring, JSP, JUnit,
+DBUnit, Mockito, SQL, HTML
+\end{itemize}}
+\vspace{11pt}
+
+\cventry{03/2007--09/2011}{IT Specialist}{IBM Canada}{Edmonton}{Alberta}
+{\begin{itemize}%
+\item Designed, coded, packaged, and delivered over 30 enhancements
+and defect fixes for two multi-tiered J2EE web applications currently active in
+public sector IT environments.
+Coding spanned the presentation, business logic, service, data access and
+database layers.
+\item Created, maintained, and executed automated and manual software tests.
+Reduced overall test execution times by enhancing existing automated tests.
+\item Technology used: Java, Struts, Hibernate, Spring, JSP, Ehcache, JUnit,
+Log4j, SQL, Ruby, Perl, HTML, XML, WebSphere, DB2
+\end{itemize}}
+\vspace{11pt}
+
+%\subsection{Miscellaneous}
+\cventry{01/2007--03/2007}{Junior Developer}{ShirWin Knowledge and Learning Inc.}{Edmonton}{Alberta}
+{\begin{itemize}%
+  \item Implemented a real-time chat system and completed user interface
+  components for a systematic/critical review web application.
+  \item Technology used: Java, PHP, JavaScript, SQL, HTML
+\end{itemize}}
+\vspace{11pt}
+
+\cventry{09/2005--04/2007}{Contract Instructor}{Canadian University
+College}{Lacombe}{Alberta}
+{\begin{itemize}%
+  \item Taught number theory and real analysis for the Division of Science.
+  Taught calculus and operations management for the School of Business.
+  \item Prepared and delivered course lecture materials and assignments.
+\end{itemize}}
+\newpage
+
+\section{Education}
+\cventry{2005}{Masters of Science}{University of Alberta}{Edmonton}{}{Pure Mathematics}  % arguments 3 to 6 can be left empty
+\cventry{2002}{Bachelor of Science}{University of Alberta}{Edmonton}{}{Mathematics Specialization}
+
+%\section{Master thesis}
+%\cvitem{title}{\emph{Actions of semitopological semigroups on locally compact Hausdorff spaces}}
+%\cvitem{supervisor}{Dr. Anthony To-Ming Lau}
+%\cvitem{description}{Short thesis abstract}
+
+%\section{Technical Skills}
+%\cvdoubleitem{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
+%\cvdoubleitem{category 2}{XXX, YYY, ZZZ}{category 5}{XXX, YYY, ZZZ}
+%\cvdoubleitem{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
+
+\section{Professional References}
+\cvitem{}{Jim Borynec}
+\cvitem{}{Contractor}
+\cvitem{}{Reflective Systems}
+\cvitem{}{Email: jborynec@reflective.ca}
+\cvitem{}{}
+\cvitem{}{Clarence Woloshyn}
+\cvitem{}{Director of Systems and Client Support (retired)}
+\cvitem{}{Drug Plan and Extended Benefits}
+\cvitem{}{Ministry of Saskatchewan Health}
+\cvitem{}{Phone: +1 306 781 2101}
+\cvitem{}{Email: cdwoloshyn@accesscomm.ca}
+\cvitem{}{}
+\cvitem{}{Dean Ast, BSP}
+\cvitem{}{Pharmacy Practice Consultant}
+\cvitem{}{Phone: +1 306 586 5445}
+\cvitem{}{Email: fastast@sasktel.net}
+%\section{Extra 1}
+%\cvlistitem{Item 1}
+%\cvlistitem{Item 2}
+%\cvlistitem{Item 3}
+
+%\renewcommand{\listitemsymbol}{-~}            % change the symbol for lists
+
+%\section{Extra 2}
+%\cvlistdoubleitem{Item 1}{Item 4}
+%\cvlistdoubleitem{Item 2}{Item 5\cite{book1}}
+%\cvlistdoubleitem{Item 3}{}
+
+% Publications from a BibTeX file without multibib\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% for BibTeX numerical labels
+
+%\nocite{*}
+%\bibliographystyle{plain}
+%\bibliography{publications}                   % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}              % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}              % 'publications' is the name of a BibTeX file
+
+%\clearpage\end{CJK*}                         % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\end{document}
+
+
+%% end of file `template.tex'.
