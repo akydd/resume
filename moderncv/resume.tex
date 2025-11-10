@@ -9,30 +9,32 @@
 \documentclass[11pt,letterpaper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
 % moderncv themes
-\moderncvstyle{casual}                        % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvstyle[left, alternate, details, symbols]{classic}                        % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
 \moderncvcolor{blue}                          % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 %\renewcommand{\familydefault}{\sfdefault}    % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
 
 % character encoding
-%\usepackage[utf8]{inputenc}                  % if you are not using xelatex ou lualatex, replace by the encoding you are using
+\usepackage[utf8]{inputenc}                  % if you are not using xelatex ou lualatex, replace by the encoding you are using
 %\usepackage{CJKutf8}                         % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
 
 % adjust the page margins
 \usepackage[scale=0.75]{geometry}
 \setlength{\hintscolumnwidth}{3cm}           % if you want to change the width of the column with the dates
-%\setlength{\maketitlenamewidth}{10cm}        % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+% \setlength{\maketitlenamewidth}{10cm}        % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
 % personal data
-\firstname{Alan}
-\familyname{Kydd}
-\title{Software developer}               % optional, remove the line if not wanted
-% \address{155 Summerton Crescent}{Sherwood Park, Alberta  T8H 2V7}    % optional, remove the line if not wanted
-\mobile{780-232-7870}                     % optional, remove the line if not wanted
-%\fax{+3~(456)~789~012}                        % optional, remove the line if not wanted
-\email{akydd@ualberta.net}                          % optional, remove the line if not wanted
-\extrainfo{https://github.com/akydd}                    % optional, remove the line if not wanted
-\homepage{https://alankydd.wordpress.com/}
+%\firstname{Alan}
+\name{Alan}{Kydd}
+%\familyname{Kydd}
+\title{Senior software developer}               % optional, remove the line if not wanted
+\phone[mobile]{+1 780 232 7870}
+% \fax{+3~(456)~789~012}                        % optional, remove the line if not wanted
+\email{kydd.alan.g@gmail.com}                          % optional, remove the line if not wanted
+%\extrainfo{\url{https://github.com/akydd}}                    % optional, remove the line if not wanted
+\social[github]{akydd}
+\social[linkedin]{alankydd}
+\homepage{alankydd.wordpress.com}
 %\extrainfo{additional information}            % optional, remove the line if not wanted
 %\photo[64pt][0.4pt]{picture}                  % '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
 %\quote{Some quote (optional)}                 % optional, remove the line if not wanted
@@ -49,133 +51,195 @@
 %            content
 %----------------------------------------------------------------------------------
 \begin{document}
-%\begin{CJK*}{UTF8}{gbsn}                     % to typeset your resume in Chinese using CJK
+% \begin{CJK*}{UTF8}{gbsn} % to typeset your resume in Chinese using CJK
 \maketitle
 
 \section{Summary}
-\cvitem{}{Alan is a skilled programmer with over 5 years of full time software development
-experience in the online entertainment industry, in a small business, and in large
-international corporations.  Alan has
-current experience with JavaScript (particularly React.js), Java and MongoDB.
-He also enjoys programming with C, Phaser.io, and Ruby on Rails.}
+\cvitem{}{Alan is a skilled programmer with 18 years of full time
+  software development experience in the online entertainment
+  industry, in small businesses, and in large international
+  corporations.  Alan has current experience with Go, Typescript,
+  GraphQL, React, AWS, and Kubernetes.  He also enjoys exploring
+  Clojure and spaCy.io}
 
-\section{Professional Experience}
-%\subsection{Vocational}
-\cventry{01/2016--present}{Software Engineer}{Betable}{Edmonton}{Alberta}
-{}
-\smallskip
+\section{Experience}
+% \subsection{Vocational}
+\cventry{10/2022--09/2025}{Senior Developer}{Looka}{Toronto}{Ontario}
+{Heavy involvment in all aspects of Looks's flagship webapp,
+  \url{looka.com}.
+  \begin{itemize}
+  \item Led Go backend development by scoping, defining and
+    implementing new GraphQL endpoints, domain logic, and asynchronous
+    jobs needed for the following 3rd party integrations. The
+    integrations also needed to integrate with Looka's existing Stripe integration.
+    \begin{itemize}
+    \item Google Workspace subscriptions.
+    \item Website hosting using Amazon Certificate Manager,
+      Cloudfront, S3, and OpemSRS.
+    \end{itemize}
+  \item Front-end work, React and TypeScript.
+    \begin{itemize}
+    \item Worked with product managers to define and implement the
+      webapp UI needed for the new backend integrations listed above.
+    \item Implemented drop-shadow feature to SVG-based graphic editor
+      within the webapp.
+    \end{itemize}
+  \item Provided ongoing assistance to the Customer Support team for
+    ticket escalations.
+    \begin{itemize}
+    \item Created automated scripts for the Customer Support team to
+      easily apply data fixes and to interact with 3rd party APIs.
+    \end{itemize}
+  \item Performed application deployments and upgrades.
+    \begin{itemize}
+    \item Reconfigured kubernetes clusters as needed.
+    \end {itemize}
+  \end{itemize}} \smallskip
 
-\cventry{08/2013--10/2015}{Developer}{Gamesys Canada}{Edmonton}{Alberta}
-{As a member of the Poker Integrity team, developed back office tools for the Virgin Poker facebook app: https://apps.facebook.com/virginpoker/
-{\begin{itemize}
-\item Designed and implemented a single-page Backbone application to interface with microservices responsible for
-creating and scheduling tournaments.
-\item Enhanced and maintained a real-time fraud detection system.
-\item Designed and implemented a single-page GWT application to visualize game session and win/loss data.
-\end{itemize}}}
-\smallskip
+\cventry{09/2021--10/2022}{Senior Software
+  Engineer}{Betable}{Edmonton}{Alberta} {\begin{itemize}
+  \item Designed and implemented a React and Redux front-end to
+    perform new game releases for online casinos. This replaced a
+    manual process using scripts and CSV files.
+  \item Major contributor to new Adyen Payment integration with
+    existing online casinos and accounting system. The backend of the
+    integration was a Go microservice, and the frontends were Angular
+    and React.
+  \end{itemize}} \smallskip
+
+\cventry{01/2016--09/2021}{Software
+  Engineer}{Betable}{Edmonton}{Alberta} {\begin{itemize}
+  \item Added functionality to an existing admin tool for online
+    casino marketers to create, edit, and schedule game offers, bonus
+    packages, and promotions. The tool was developed using React and
+    Redux.
+  \item Provided ongoing maintenance to the Prospect Hall online
+    casino, formerly at \url{prospecthallcasino.com}.
+  \end{itemize}} \smallskip
+
+\cventry{08/2013--10/2015}{Developer}{Gamesys
+  Canada}{Edmonton}{Alberta} {Member of the Poker Integrity team for
+  the Virgin Poker facebook app, formerly at
+  \url{https://apps.facebook.com/virginpoker/}.  {\begin{itemize}
+    \item Designed and implemented a single-page Backbone application
+      to interface with microservices responsible for creating and
+      scheduling online poker tournaments.
+    \item Enhanced and maintained a real-time poker fraud detection
+      system.
+    \item Contrinuted to the implementation of a single-page GWT
+      application to visualize poker game session and win/loss data.
+    \end{itemize}}} \smallskip
 
 \cventry{10/2011--08/2013}{Developer}{CGI Canada}{Edmonton}{Alberta}
 {Designed, coded and tested major enhancements for two public sector
-JEE web applications.
-Coding spanned the presentation, business logic, and persistence layers.}
-\smallskip
+  JEE web applications.}  \smallskip
 
-\cventry{03/2007--09/2011}{IT Specialist}{IBM Canada}{Edmonton}{Alberta}
-{Designed, coded, packaged, delivered and deployed over 30 enhancements
-and defect fixes for two public sector JEE web applications.
-Coding spanned the presentation, business logic, and persistence layers.
-{\begin{itemize}
-\item 
-Reduced overall automated test execution time by enhancing the automated test suite.
-Used JUnit, Rational Functional Tester, XML, Perl, and Ruby.
-\end{itemize}}}
-\smallskip
+\cventry{03/2007--09/2011}{IT Specialist}{IBM
+  Canada}{Edmonton}{Alberta} {Designed, implemented and delivered over
+  30 enhancements and defect fixes for two public sector JEE web
+  applications.{\begin{itemize}
+    \item One of these applications is eHealth Saskatchewan's Pharmaceutical Information Program, \url{https://www.ehealthsask.ca/pip}.
+    \end{itemize}}}  \smallskip
 
-%\subsection{Miscellaneous}
-\cventry{01/2007--03/2007}{Junior Developer}{ShirWin Knowledge and Learning Inc.}{Edmonton}{Alberta}
-{Implemented a real-time chat system and completed user interface components for a
-systematic/critical review web application using Java, JavaScript, HTML and PHP.}
+% \subsection{Miscellaneous}
+\cventry{01/2007--03/2007}{Junior Developer}{ShirWin Knowledge and
+  Learning Inc.}{Edmonton}{Alberta} {Implemented a real-time chat
+  system and completed user interface components for a
+  systematic/critical review web application using Java, JavaScript,
+  HTML and PHP.}
 
 \section{Education}
-\cventry{2005}{Masters of Science}{University of Alberta}{Edmonton}{}{Pure Mathematics}  % arguments 3 to 6 can be left empty
-\cventry{2002}{Bachelor of Science}{University of Alberta}{Edmonton}{}{Mathematics Specialization}
+\cventry{2005}{Masters of Science}{University of
+  Alberta}{Edmonton}{}{Pure
+  Mathematics} % arguments 3 to 6 can be left empty
+\cventry{2002}{Bachelor of Science}{University of
+  Alberta}{Edmonton}{}{Mathematics Specialization}
 
-%\section{Master thesis}
-%\cvitem{title}{\emph{Actions of semitopological semigroups on locally compact Hausdorff spaces}}
-%\cvitem{supervisor}{Dr. Anthony To-Ming Lau}
-%\cvitem{description}{Short thesis abstract}
+% \section{Master thesis}
+% \cvitem{title}{\emph{Actions of semitopological semigroups on
+% locally compact Hausdorff spaces}} \cvitem{supervisor}{Dr. Anthony
+% To-Ming Lau} \cvitem{description}{Short thesis abstract}
 
-%\section{Technical Skills}
-%\cvdoubleitem{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
-%\cvdoubleitem{category 2}{XXX, YYY, ZZZ}{category 5}{XXX, YYY, ZZZ}
-%\cvdoubleitem{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
+% \section{Technical Skills}
+% \cvdoubleitem{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
+% \cvdoubleitem{category 2}{XXX, YYY, ZZZ}{category 5}{XXX, YYY, ZZZ}
+% \cvdoubleitem{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
 
 \section{Technical Skills}
-\cvitem{Programming languages}{Intermediate JavaScript, Java and SQL, basic C, Ruby and Perl}
-\cvitem{Framworks and libraries}{Intermediate Marionette.js, basic RequireJS, Bootstrap, JQuery,
-Ruby on Rails, Sinatra, Spring, Hibernate, Jasmine}
-\cvitem{Software}{MongoDB, DB2, WebSphere, Tomcat, Git, Subversion}
+\cvitem{Programming languages}{Go, TypeScript, Clojure, Java}
+\cvitem{Framworks and libraries}{React, GraphQL}
+\cvitem{Integrations}{Stripe, AWS, Google Workspace}
+\cvitem{Software and tools}{Kubernetes, Docker, MySQL, PostgreSQL, MongoDB, Git}
 
-\section{Personal projects}
-\cventry{}{Sacred Texts}{}{https://github.com/akydd/sacred_texts}{}
-{The Sacred Texts API lets users browse and search English translations of some religous texts.
-This was a pet project for learning Sinatra and MongoDB, and for experimenting with
-RESTful API design.}
+\section{Personal Projects}
+% \cventry{}{Sacred Texts}{}{https://github.com/akydd/sacred_texts}{}
+% {The Sacred Texts API lets users browse and search English
+% translations of some religous texts.  This was a pet project for
+% learning Sinatra and MongoDB, and for experimenting with RESTful API
+% design.}  \smallskip
+\cvitem{RealWorld Clojure}{\url{https://github.com/akydd/realworld-clojure}. In
+  progress. A Clojure implementation of the RealWorld API,
+  \url{https://realworld-docs.netlify.app/}.}
+\cvitem{2-player Pong}{\url{https://github.com/akydd/multi_pong_server} \&
+  \url{https://github.com/akydd/multi_pong}. 2-player client-server
+  Pong game with basic client-side prediction. Node.js and Phaser.io
+  with websockets.}
 \smallskip
-
-\cventry{}{NES Emulator}{}{https://github.com/akydd/nes\_emulator}{}
-{In progress. It is currently a functional 6502 emulator.  Developed using C and SDL.}
+\cvitem{MOS Technology 6502 Emulator}{\url{https://github.com/akydd/nes_emulator}. Originally
+  planned as an NES emulator, it fully implemente the 8-bit 6502
+  instruction set, but does not emulate the clock speed. Written in
+  C.}
 
 
 \section{Professional References}
+\cvitem{}{Andrew Martin}
+\cvitem{}{Chief Technology Officer, Looka, Toronto}
+\cvitem{}{Email: andrew.brown.martin@gmail.com}
+\cvitem{}{}
+\cvitem{}{Rachel Pautler}
+\cvitem{}{Former Product Lead, Looka, Toronto}
+\cvitem{}{Phone: 519-998-1068}
+\cvitem{}{Email: pautler92@gmail.com}
+\cvitem{}{}
+\cvitem{}{Jay Brown}
+\cvitem{}{Former Contractor, Looka, Toronto}
+\cvitem{}{Email: jay.a.brown@gmail.com}
+\cvitem{}{}
 \cvitem{}{Kris Sabourin}
-\cvitem{}{Engineering Manager, Betable Canada}
+\cvitem{}{Former Engineering Manager, Betable, Edmonton}
 \cvitem{}{Phone: 780-264-5744}
 \cvitem{}{}
 \cvitem{}{Liam Johnstone}
-\cvitem{}{Poker Integrity Team Lead, Gamesys Canada}
+\cvitem{}{Former Poker Integrity Team Lead, Gamesys Canada, Edmonton}
 \cvitem{}{Phone: 780-619-5426}
 \cvitem{}{}
-\cvitem{}{Jim Borynec}
-\cvitem{}{Contractor}
-\cvitem{}{Reflective Systems}
-\cvitem{}{Email: jborynec@reflective.ca}
-\cvitem{}{}
-\cvitem{}{Clarence Woloshyn}
-\cvitem{}{Director of Systems and Client Support (retired)}
-\cvitem{}{Drug Plan and Extended Benefits}
-\cvitem{}{Ministry of Saskatchewan Health}
-\cvitem{}{Phone: 306-781-2101}
-\cvitem{}{Email: cdwoloshyn@accesscomm.ca}
-%\section{Extra 1}
-%\cvlistitem{Item 1}
-%\cvlistitem{Item 2}
-%\cvlistitem{Item 3}
+% \cvitem{}{Jim Borynec} \cvitem{}{Contractor} \cvitem{}{Reflective
+% Systems} \cvitem{}{Email: jborynec@reflective.ca} \cvitem{}{}
+% \cvitem{}{Clarence Woloshyn} \cvitem{}{Director of Systems and
+% Client Support (retired)} \cvitem{}{Drug Plan and Extended Benefits}
+% \cvitem{}{Ministry of Saskatchewan Health} \cvitem{}{Phone:
+% 306-781-2101} \cvitem{}{Email: cdwoloshyn@accesscomm.ca}
+% \section{Extra 1}
+% \cvlistitem{Item 1} \cvlistitem{Item 2} \cvlistitem{Item 3}
 
-%\renewcommand{\listitemsymbol}{-~}            % change the symbol for lists
+% \renewcommand{\listitemsymbol}{-~} % change the symbol for lists
 
-%\section{Extra 2}
-%\cvlistdoubleitem{Item 1}{Item 4}
-%\cvlistdoubleitem{Item 2}{Item 5\cite{book1}}
-%\cvlistdoubleitem{Item 3}{}
+% \section{Extra 2}
+% \cvlistdoubleitem{Item 1}{Item 4} \cvlistdoubleitem{Item 2}{Item
+% 5\cite{book1}} \cvlistdoubleitem{Item 3}{}
 
-% Publications from a BibTeX file without multibib\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% for BibTeX numerical labels
+% Publications from a BibTeX file without
+% multibib\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% for BibTeX numerical labels
 
-%\nocite{*}
-%\bibliographystyle{plain}
-%\bibliography{publications}                   % 'publications' is the name of a BibTeX file
+% \nocite{*} \bibliographystyle{plain}
+% \bibliography{publications} % 'publications' is the name of a BibTeX file
 
 % Publications from a BibTeX file using the multibib package
-%\section{Publications}
-%\nocitebook{book1,book2}
-%\bibliographystylebook{plain}
-%\bibliographybook{publications}              % 'publications' is the name of a BibTeX file
-%\nocitemisc{misc1,misc2,misc3}
-%\bibliographystylemisc{plain}
-%\bibliographymisc{publications}              % 'publications' is the name of a BibTeX file
+% \section{Publications}
+% \nocitebook{book1,book2} \bibliographystylebook{plain}
+% \bibliographybook{publications} % 'publications' is the name of a BibTeX file \nocitemisc{misc1,misc2,misc3} \bibliographystylemisc{plain} \bibliographymisc{publications} % 'publications' is the name of a BibTeX file
 
-%\clearpage\end{CJK*}                         % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+% \clearpage\end{CJK*} % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
 \end{document}
 
 
