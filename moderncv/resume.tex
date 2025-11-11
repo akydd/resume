@@ -58,58 +58,49 @@
 \cvitem{}{Alan is a skilled programmer with 18 years of full time
   software development experience in the online entertainment
   industry, in small businesses, and in large international
-  corporations.  Alan has current experience with Go, Typescript,
+  corporations.  Alan has current experience with Go, TypeScript,
   GraphQL, React, AWS, and Kubernetes.  He also enjoys exploring
   Clojure and spaCy.io}
 
 \section{Experience}
 % \subsection{Vocational}
 \cventry{10/2022--09/2025}{Senior Developer}{Looka}{Toronto}{Ontario}
-{Heavy involvment in all aspects of Looks's flagship webapp,
+{Heavy involvment in all aspects of Looks's flagship web application,
   \url{looka.com}.
   \begin{itemize}
-  \item Led Go backend development by scoping, defining and
+  \item Led Go back-end development by scoping, defining and
     implementing new GraphQL endpoints, domain logic, and asynchronous
-    jobs needed for the following 3rd party integrations. The
-    integrations also needed to integrate with Looka's existing Stripe integration.
+    jobs needed for two major customer-facing features:
     \begin{itemize}
-    \item Google Workspace subscriptions.
-    \item Website hosting using Amazon Certificate Manager,
-      Cloudfront, S3, and OpemSRS.
+    \item Google Workspace Reseller - allow customers to purchase and manage Google Workspace subscriptions through the Looka web application.
+      %The backend handles all aspects of provisioning a Google Workspace and user management via the appropriate Google APIs. It uses webhook events to synchronizes Google subscriptions with Looka's Stripe subscriptions.
+    \item Website hosting - allow customers to host and manage branded websites designed within the Looka web application.
+      % Web hosting is accomplished using a combination of Amazon Certificate Manager, Cloudfront, S3, and OpemSRS. Much of this work is processed asyncronously using Go routines and a job queue.
     \end{itemize}
   \item Front-end work, React and TypeScript.
     \begin{itemize}
     \item Worked with product managers to define and implement the
-      webapp UI needed for the new backend integrations listed above.
-    \item Implemented drop-shadow feature to SVG-based graphic editor
-      within the webapp.
+      web application UI components needed for the new backend integrations listed above.
+    \item Implemented a drop-shadow feature for the web application's SVG-based graphic editor.
     \end{itemize}
-  \item Provided ongoing assistance to the Customer Support team for
-    ticket escalations.
-    \begin{itemize}
-    \item Created automated scripts for the Customer Support team to
-      easily apply data fixes and to interact with 3rd party APIs.
-    \end{itemize}
-  \item Performed application deployments and upgrades.
-    \begin{itemize}
-    \item Reconfigured kubernetes clusters as needed.
-    \end {itemize}
+  \item Assisted the Customer Support team with ticket escalations.
+  \item Performed application deployments and upgrades, reconfiguring Kubernetes clusters as needed.
   \end{itemize}} \smallskip
 
 \cventry{09/2021--10/2022}{Senior Software
   Engineer}{Betable}{Edmonton}{Alberta} {\begin{itemize}
   \item Designed and implemented a React and Redux front-end to
-    perform new game releases for online casinos. This replaced a
+    manage new game releases for online casinos. This replaced a
     manual process using scripts and CSV files.
-  \item Major contributor to new Adyen Payment integration with
-    existing online casinos and accounting system. The backend of the
+  \item Major contributor to a new Adyen Payment integration with
+    existing online casinos and an existing accounting system. The backend of the
     integration was a Go microservice, and the frontends were Angular
     and React.
   \end{itemize}} \smallskip
 
 \cventry{01/2016--09/2021}{Software
   Engineer}{Betable}{Edmonton}{Alberta} {\begin{itemize}
-  \item Added functionality to an existing admin tool for online
+  \item Added functionality to an existing backoffice web application for online
     casino marketers to create, edit, and schedule game offers, bonus
     packages, and promotions. The tool was developed using React and
     Redux.
@@ -126,27 +117,26 @@
       scheduling online poker tournaments.
     \item Enhanced and maintained a real-time poker fraud detection
       system.
-    \item Contrinuted to the implementation of a single-page GWT
+    \item Contributed to the implementation of a single-page GWT
       application to visualize poker game session and win/loss data.
     \end{itemize}}} \smallskip
 
 \cventry{10/2011--08/2013}{Developer}{CGI Canada}{Edmonton}{Alberta}
-{Designed, coded and tested major enhancements for two public sector
+{Designed, implemented and tested major enhancements for two public sector
   JEE web applications.}  \smallskip
 
 \cventry{03/2007--09/2011}{IT Specialist}{IBM
   Canada}{Edmonton}{Alberta} {Designed, implemented and delivered over
   30 enhancements and defect fixes for two public sector JEE web
   applications.{\begin{itemize}
-    \item One of these applications is eHealth Saskatchewan's Pharmaceutical Information Program, \url{https://www.ehealthsask.ca/pip}.
+    \item One of these applications is eHealth Saskatchewan's ``Pharmaceutical Information Program'', \url{https://www.ehealthsask.ca/pip}.
     \end{itemize}}}  \smallskip
 
 % \subsection{Miscellaneous}
 \cventry{01/2007--03/2007}{Junior Developer}{ShirWin Knowledge and
   Learning Inc.}{Edmonton}{Alberta} {Implemented a real-time chat
   system and completed user interface components for a
-  systematic/critical review web application using Java, JavaScript,
-  HTML and PHP.}
+  systematic/critical review web application using Java, JavaScript and PHP.}
 
 \section{Education}
 \cventry{2005}{Masters of Science}{University of
@@ -155,6 +145,7 @@
 \cventry{2002}{Bachelor of Science}{University of
   Alberta}{Edmonton}{}{Mathematics Specialization}
 
+% \newpage
 % \section{Master thesis}
 % \cvitem{title}{\emph{Actions of semitopological semigroups on
 % locally compact Hausdorff spaces}} \cvitem{supervisor}{Dr. Anthony
@@ -171,6 +162,7 @@
 \cvitem{Integrations}{Stripe, AWS, Google Workspace}
 \cvitem{Software and tools}{Kubernetes, Docker, MySQL, PostgreSQL, MongoDB, Git}
 
+\newpage 
 \section{Personal Projects}
 % \cventry{}{Sacred Texts}{}{https://github.com/akydd/sacred_texts}{}
 % {The Sacred Texts API lets users browse and search English
