@@ -6,11 +6,11 @@
 % available at http://www.latex-project.org/lppl/.
 
 
-\documentclass[11pt,letterpaper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\documentclass[11pt,letterpaper]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
 % moderncv themes
-\moderncvstyle[left, alternate, details, symbols]{classic}                        % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
 \moderncvcolor{blue}                          % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\moderncvstyle{fancy}                        % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
 %\renewcommand{\familydefault}{\sfdefault}    % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
 \nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
 
@@ -19,21 +19,24 @@
 %\usepackage{CJKutf8}                         % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
 
 % adjust the page margins
-\usepackage[scale=0.75]{geometry}
-\setlength{\hintscolumnwidth}{3cm}           % if you want to change the width of the column with the dates
+\usepackage[scale=0.8]{geometry}
+\recomputelengths
+% \setlength{\hintscolumnwidth}{3cm}           % if you want to change the width of the column with the dates
 % \setlength{\maketitlenamewidth}{10cm}        % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
 % personal data
-%\firstname{Alan}
-\name{Alan}{Kydd}
-%\familyname{Kydd}
-\title{Senior software developer}               % optional, remove the line if not wanted
+\firstname{Alan}
+% \name{Alan}{Kydd}
+\familyname{Kydd}
+\title{Senior Software Engineer}               % optional, remove the line if not wanted
 %\phone[mobile]{+1 780 232 7870}
 % \fax{+3~(456)~789~012}                        % optional, remove the line if not wanted
 \email{kydd.alan.g@gmail.com}                          % optional, remove the line if not wanted
+\sethintscolumntowidth{kydd.alan.g@gmail.com}
 %\extrainfo{\url{https://github.com/akydd}}                    % optional, remove the line if not wanted
 \social[github]{akydd}
 \social[linkedin]{alankydd}
+\quote{Backend Engineer specializing in Go, APIs, and cloud-based SaaS platforms.}
 %\homepage{alankydd.wordpress.com}
 %\extrainfo{additional information}            % optional, remove the line if not wanted
 %\photo[64pt][0.4pt]{picture}                  % '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
@@ -55,81 +58,69 @@
 \maketitle
 
 \section{Summary}
-\cvitem{}{Alan is a skilled programmer with 18 years of full time
-  software development experience in the online entertainment
-  industry, in startups, and in large international
-  corporations.  Alan has current experience with Go,
-  GraphQL, React, AWS, Kubernetes, PostgreSQL and MySQL. He also enjoys exploring
-  Clojure and ClojureScript.}
+\cvitem{}{Senior Software Engineer with 18 years of experience designing and building backend systems and scalable web applications in startups and large organizations. Specialized in Go, APIs, and cloud-based infrastructure, with strong experience building scalable services and internal tools that improve operational efficiency. Recent work includes leading backend development for major features in a SaaS platform, integrating Google Workspace and AWS infrastructure, and developing internal systems enabling non-engineers to manage complex workflows.}
+
+\section{Key Skills}
+\cvitem{Languages}{Go, TypeScript, Clojure, SQL}
+\cvitem{Backend}{Go, GraphQL, REST APIs, microservices, Clojure}
+\cvitem{Frontend}{React, Redux, TypeScript, ClojureScript}
+\cvitem{Tools}{Claude Code, Git}
+\cvitem{Infrastructure}{AWS, Kubernetes, Docker}
+\cvitem{Databases}{PostgreSQL, MySQL, MongoDB, Cassandra}
+\cvitem{Other}{Stripe, Adyen, Google Workspace}
 
 \section{Experience}
 % \subsection{Vocational}
-\cventry{10/2022--09/2025}{Senior Developer}{Looka}{Toronto}{Ontario}
-{Laid off due to company-wide reduction in force.
+\cventry{10/2022--09/2025}{Senior Fullstack Engineer}{Looka}{Toronto}{Ontario}{Laid off due to company-wide reduction in force.
   \begin{itemize}
-  \item Led Go and GraphQL back-end development for, and successfully launched, two new features to Looka's flagship web application, \url{looka.com}:
+  \item Led backend architecture and implementation (Go, GraphQL) for two major customer-facing features in Looka’s flagship SaaS platform:
     \begin{itemize}
-    \item Google Workspace Reseller - allow customers to purchase and manage Google Workspace subscriptions through the Looka web application.
+    \item Google Workspace Reseller integration allowing customers to purchase and manage subscriptions directly within Looka.
       %The backend handles all aspects of provisioning a Google Workspace and user management via the appropriate Google APIs. It uses webhook events to synchronizes Google subscriptions with Looka's Stripe subscriptions.
-    \item AWS website hosting - allow customers to host and manage branded websites designed within the Looka web application.
+    \item AWS-based website hosting platform enabling users to deploy branded websites created in Looka.
       % Web hosting is accomplished using a combination of Amazon Certificate Manager, Cloudfront, S3, and OpemSRS. Much of this work is processed asyncronously using Go routines and a job queue.
     \end{itemize}
-  \item Implemented a drop-shadow feature for the web application's SVG-based graphic editor.
-  % \item Performed application deployments and upgrades, monitoring and reconfiguring Kubernetes clusters as needed.
-  \item Created TypeScript scripts for the Customer Service team, resulting in faster customer ticket resolution times, in increased autonomy of the Customer Service team, and in less engineering involvement in resolving complex customer tickets.
-  \end{itemize}} \smallskip
+  \item Implemented a drop-shadow feature for Looka's SVG-based graphic editor.
+    % \item Performed application deployments and upgrades, monitoring and reconfiguring Kubernetes clusters as needed.
+  \item Developed TypeScript automation tools for the Customer Service team, reducing engineering involvement in support cases and improving ticket resolution speed.
+\end{itemize}}
+\smallskip
 
 \cventry{09/2021--10/2022}{Senior Software
   Engineer}{Betable}{Edmonton}{Alberta} {\begin{itemize}
-  \item Designed, implemented and delivered a React and Redux front end,
-    and Rest endpoints on the back end, to
-    manage third-party online casino games. This replaced a
-    cumbersome manual process that could only be performed by engineers. The new system was
-    user-friendly enough for all game management tasks to be handed over to a non-engineer.
-  \item Major contributor to a new Adyen Payment integration with
-    existing online casinos and an existing accounting system. The backend of the
-    integration was a Go microservice, and the frontends were Angular
-    and React.
-  \end{itemize}} \smallskip
+  \item Designed and delivered a React/Redux application with supporting backend endpoints for managing third-party online casino games.
+  \item Replaced a manual engineering workflow with an internal tool that enabled non-engineers to manage game deployments independently.
+  \item Contributed to an Adyen payment integration, implementing a Go microservice backend with Angular and React frontends.
+  \end{itemize}}
+\smallskip
 
 \cventry{01/2016--09/2021}{Software
   Engineer}{Betable}{Edmonton}{Alberta} {\begin{itemize}
-  \item Added backoffice web application functionality for the marketing team to
-    easily create, edit, and schedule game offers, bonus
-    packages, and promotions. The tool was developed using React and
-    Redux.
+  \item Developed internal marketing tools enabling non-technical teams to create, edit, and schedule promotions, bonuses, and game offers.
+  \item Implemented features using React and Redux within Betable’s back-office platform.
  % \item Provided ongoing maintenance to the Prospect Hall online casino, formerly at \url{prospecthallcasino.com}.
   \end{itemize}} \smallskip
 
 \cventry{08/2013--10/2015}{Developer}{Gamesys
-  Canada}{Edmonton}{Alberta} {Laid off due to company restructuring. Member of the Poker Integrity team for
-  the Virgin Poker facebook app, formerly at
-  \url{https://apps.facebook.com/virginpoker/}   {\begin{itemize}
-    \item Designed and implemented a single-page Backbone application
-      to interface with microservices responsible for creating and
-      scheduling online poker tournaments.
-      % This replaced a less user-friendly web app.
-    % \item Enhanced and maintained a real-time poker fraud detection system.
-    \item Contributed to the implementation of a single-page GWT
-      application to visualize poker game session and win/loss data. This was used to investigate fraud.
-    \end{itemize}}} \smallskip
+  Canada}{Edmonton}{Alberta}{Laid off due to company restructuring.
+  \begin{itemize}
+    \item Built a Backbone.js single-page application for managing online poker tournaments through internal microservices.
+    \item Contributed to a GWT analytics application used to investigate poker game fraud and analyze player win/loss data.
+  \end{itemize}}
+
+\smallskip
 
 \cventry{10/2011--08/2013}{Developer}{CGI Canada}{Edmonton}{Alberta}
-{Designed and delivered enhancements for two public sector
-  JEE web applications.}  \smallskip
+{Developed enhancements for two public-sector Java EE web applications.}
+\smallskip
 
 \cventry{03/2007--09/2011}{IT Specialist}{IBM
-  Canada}{Edmonton}{Alberta} {Designed and delivered over
-  30 enhancements and fixes for two public sector JEE web
-  applications.{\begin{itemize}
-    \item One of these applications is eHealth Saskatchewan's ``Pharmaceutical Information Program'', \url{https://www.ehealthsask.ca/pip}.
-    \end{itemize}}}  \smallskip
+  Canada}{Edmonton}{Alberta}{Delivered 30+ enhancements and production fixes for public-sector Java EE systems. including eHealth Saskatchewan’s Pharmaceutical Information Program.}
+\smallskip
 
 % \subsection{Miscellaneous}
 \cventry{01/2007--03/2007}{Junior Developer}{ShirWin Knowledge and
-  Learning Inc.}{Edmonton}{Alberta} {Implemented a real-time chat
-  system and completed user interface components for a
-  systematic/critical review web application using Java, JavaScript and PHP.}
+  Learning Inc.}{Edmonton}{Alberta}{Implemented a real-time chat system and UI components for a systematic review web application.}
 
 \section{Education}
 \cventry{2005}{Masters of Science}{University of
@@ -149,32 +140,22 @@
 % \cvdoubleitem{category 2}{XXX, YYY, ZZZ}{category 5}{XXX, YYY, ZZZ}
 % \cvdoubleitem{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
 
-\section{Technical Skills}
-\cvitem{Programming languages}{Go, Clojure, ClojureScript, TypsScript, Java}
-\cvitem{Framworks and libraries}{React, Redux, Re-frame, GraphQL}
-\cvitem{Integrations}{Stripe, AWS, Google Workspace}
-\cvitem{Software and tools}{Kubernetes, Docker, MySQL, PostgreSQL, CassandraDB, MongoDB, Git}
+
 
 % \newpage
 
-\section{Personal Projects}
+\section{Selected Projects}
 % \cventry{}{Sacred Texts}{}{https://github.com/akydd/sacred_texts}{}
 % {The Sacred Texts API lets users browse and search English
 % translations of some religous texts.  This was a pet project for
 % learning Sinatra and MongoDB, and for experimenting with RESTful API
 % design.}  \smallskip
-\cvitem{RealWorld Clojure}{\url{https://github.com/akydd/realworld-clojure}. A
-  Clojure implementation of the RealWorld API,
-  \url{https://realworld-docs.netlify.app/}.}
-\cvitem{2-player Pong}{\url{https://github.com/akydd/multi_pong_server} \&
-  \url{https://github.com/akydd/multi_pong}. 2-player client-server
-  Pong game with basic client-side prediction. Node.js and Phaser.io
-  with websockets.}
-\smallskip
-\cvitem{MOS Technology 6502 Emulator}{\url{https://github.com/akydd/nes_emulator}. Originally
-  planned as an NES emulator, it fully implemente the 8-bit 6502
-  instruction set, but does not emulate the clock speed. Written in
-  C.}
+\cvitem{RealWorld Go API}{\url{https://github.com/akydd/realworld-backend-go}.
+  Implementation of the RealWorld backend API specification in Go, developed using an AI-assisted workflow (Claude Code).}
+\cvitem{RealWorld Clojure API}{\url{https://github.com/akydd/realworld-clojure}.
+  Implementation of the RealWorld backend API specification in Clojure, demonstrating REST API architecture, authentication, and production-style backend patterns.}
+% \cvitem{2-player Pong}{\url{https://github.com/akydd/multi_pong_server} \& \url{https://github.com/akydd/multi_pong}. Two-player client-server Pong game using Node.js, Phaser, and WebSockets with basic client-side prediction.}
+\cvitem{MOS 6502 Emulator}{\url{https://github.com/akydd/nes_emulator}. Implemented a MOS 6502 CPU emulator in C supporting the full 8-bit instruction set.}
 
 %\newpage
 
