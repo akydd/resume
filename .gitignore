@@ -1,1 +1,10 @@
 **/node_modules/
+
+# LaTeX build artifacts
+moderncv/*.aux
+moderncv/*.log
+moderncv/*.out
+moderncv/*.pdf
+moderncv/*.tex~
+moderncv/#*.tex#
+moderncv/_region_.tex
