@@ -7,6 +7,8 @@ allowed-tools: Read, Glob, Bash, Web Fetch
 
 Generate a cover letter for the job at url `$ARGUMENTS`.
 
+**Do not use the Agent tool for any step. Call all tools directly.**
+
 ## Steps
 
 1. Fetch the job posting using two strategies in order:
