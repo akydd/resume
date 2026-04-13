@@ -64,8 +64,8 @@
 \cvitem{Languages}{Go, TypeScript, Clojure, SQL}
 \cvitem{Backend}{Go, GraphQL, REST APIs, microservices, Clojure}
 \cvitem{Frontend}{React, Redux, TypeScript, ClojureScript}
-\cvitem{Tools}{Claude Code, Git}
-\cvitem{Infrastructure}{AWS, Kubernetes, Docker, Apache Kafka}
+\cvitem{Tools}{Claude Code, Git, GitHub Actions, Jenkins, CircleCI}
+\cvitem{Infrastructure}{AWS (S3, CloudFront, ACM, ECS Fargate, RDS, ALB), Terraform, Kubernetes, Helm, Docker, Apache Kafka}
 \cvitem{Databases}{PostgreSQL, MySQL, MongoDB, Cassandra}
 \cvitem{Other}{Stripe, Adyen, Google Workspace}
 
@@ -77,12 +77,12 @@
     \begin{itemize}
     \item Google Workspace Reseller integration allowing customers to purchase and manage subscriptions directly within Looka.
       %The backend handles all aspects of provisioning a Google Workspace and user management via the appropriate Google APIs. It uses webhook events to synchronizes Google subscriptions with Looka's Stripe subscriptions.
-    \item AWS-based website hosting platform enabling users to deploy branded websites created in Looka.
-      % Web hosting is accomplished using a combination of Amazon Certificate Manager, Cloudfront, S3, and OpemSRS. Much of this work is processed asyncronously using Go routines and a job queue.
+    \item AWS-based website hosting platform enabling users to deploy branded websites, built on S3, CloudFront, and Amazon Certificate Manager.
     \end{itemize}
+  \item Managed Kubernetes cluster operations: container configuration, Helm chart deployments, node lifecycle management, and secrets management.
   \item Implemented a drop-shadow feature for Looka's SVG-based graphic editor.
-    % \item Performed application deployments and upgrades, monitoring and reconfiguring Kubernetes clusters as needed.
   \item Developed TypeScript automation tools for the Customer Service team, reducing engineering involvement in support cases and improving ticket resolution speed.
+  \item Maintained CI/CD pipelines (CircleCI) for automated testing.
 \end{itemize}}
 \smallskip
 
@@ -151,7 +151,7 @@
 % learning Sinatra and MongoDB, and for experimenting with RESTful API
 % design.}  \smallskip
 \cvitem{RealWorld Go API}{\url{https://github.com/akydd/realworld-backend-go}.
-  Implementation of the RealWorld backend API specification in Go, developed using an AI-assisted workflow (Claude Code).}
+  RealWorld backend API in Go using hexagonal architecture, deployed to AWS ECS Fargate with Terraform. CI/CD via GitHub Actions with OIDC-based AWS authentication, integration tests using Hurl, and secrets management via AWS Secrets Manager.}
 \cvitem{RealWorld Clojure API}{\url{https://github.com/akydd/realworld-clojure}.
   Implementation of the RealWorld backend API specification in Clojure, demonstrating REST API architecture, authentication, and production-style backend patterns.}
 % \cvitem{2-player Pong}{\url{https://github.com/akydd/multi_pong_server} \& \url{https://github.com/akydd/multi_pong}. Two-player client-server Pong game using Node.js, Phaser, and WebSockets with basic client-side prediction.}
