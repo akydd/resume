@@ -36,7 +36,7 @@
 %\extrainfo{\url{https://github.com/akydd}}                    % optional, remove the line if not wanted
 \social[github]{akydd}
 \social[linkedin]{alankydd}
-\quote{Backend Engineer specializing in Go, APIs, and cloud-based SaaS platforms.}
+% \quote{Backend Engineer specializing in Go, APIs, and cloud-based SaaS platforms.}
 %\homepage{alankydd.wordpress.com}
 %\extrainfo{additional information}            % optional, remove the line if not wanted
 %\photo[64pt][0.4pt]{picture}                  % '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
@@ -108,26 +108,19 @@
     \item Contributed to a GWT analytics application used to investigate poker game fraud and analyze player win/loss data.
   \end{itemize}}
 
-\smallskip
+%\smallskip
 
-\cventry{10/2011--08/2013}{Developer}{CGI Canada}{Edmonton}{Alberta}
-{Developed enhancements for two public-sector Java EE web applications.}
-\smallskip
+%\cventry{10/2011--08/2013}{Developer}{CGI Canada}{Edmonton}{Alberta}
+%{Developed enhancements for two public-sector Java EE web applications.}
+%\smallskip
 
-\cventry{03/2007--09/2011}{IT Specialist}{IBM
-  Canada}{Edmonton}{Alberta}{Delivered 30+ enhancements and production fixes for public-sector Java EE systems. including eHealth Saskatchewan’s Pharmaceutical Information Program.}
-\smallskip
+%\cventry{03/2007--09/2011}{IT Specialist}{IBM
+%  Canada}{Edmonton}{Alberta}{Delivered 30+ enhancements and production fixes for public-sector Java EE systems. including eHealth Saskatchewan’s Pharmaceutical Information Program.}
+%\smallskip
 
 % \subsection{Miscellaneous}
-\cventry{01/2007--03/2007}{Junior Developer}{ShirWin Knowledge and
-  Learning Inc.}{Edmonton}{Alberta}{Implemented a real-time chat system and UI components for a systematic review web application.}
-
-\section{Education}
-\cventry{2005}{Masters of Science}{University of
-  Alberta}{Edmonton}{}{Pure
-  Mathematics} % arguments 3 to 6 can be left empty
-\cventry{2002}{Bachelor of Science}{University of
-  Alberta}{Edmonton}{}{Mathematics Specialization}
+%\cventry{01/2007--03/2007}{Junior Developer}{ShirWin Knowledge and
+%  Learning Inc.}{Edmonton}{Alberta}{Implemented a real-time chat system and UI components for a systematic review web application.}
 
 % \newpage
 % \section{Master thesis}
@@ -144,18 +137,31 @@
 
 % \newpage
 
-\section{Selected Projects}
+\section{Selected Systems \& Backend Projects}
 % \cventry{}{Sacred Texts}{}{https://github.com/akydd/sacred_texts}{}
 % {The Sacred Texts API lets users browse and search English
 % translations of some religous texts.  This was a pet project for
 % learning Sinatra and MongoDB, and for experimenting with RESTful API
 % design.}  \smallskip
+\cvitem{Anomaly Detector}{\url{https://github.com/akydd/log-anomale-detector}.
+  Built a cloud-based log anomaly detection system using Go and AWS, processing application logs to identify unusual patterns and surface potential issues.
+Designed as a distributed pipeline, with infrastructure provisioned via Terraform and services deployed on AWS. Emphasizes observability, scalability, and real-world monitoring use cases.}
 \cvitem{RealWorld Go API}{\url{https://github.com/akydd/realworld-backend-go}.
   RealWorld backend API in Go using hexagonal architecture, deployed to AWS ECS Fargate with Terraform. CI/CD via GitHub Actions with OIDC-based AWS authentication, integration tests using Hurl, and secrets management via AWS Secrets Manager.}
 \cvitem{RealWorld Clojure API}{\url{https://github.com/akydd/realworld-clojure}.
-  Implementation of the RealWorld backend API specification in Clojure, demonstrating REST API architecture, authentication, and production-style backend patterns.}
+  Implemented the RealWorld backend API in Clojure, applying functional design principles and idiomatic patterns to build a production-style REST API.
+Demonstrates backend architecture, authentication flows, and practical use of Clojure in real-world service development.}
+%  Implementation of the RealWorld backend API specification in Clojure, demonstrating REST API architecture, authentication, and production-style backend patterns.}
 % \cvitem{2-player Pong}{\url{https://github.com/akydd/multi_pong_server} \& \url{https://github.com/akydd/multi_pong}. Two-player client-server Pong game using Node.js, Phaser, and WebSockets with basic client-side prediction.}
-\cvitem{MOS 6502 Emulator}{\url{https://github.com/akydd/nes_emulator}. Implemented a MOS 6502 CPU emulator in C supporting the full 8-bit instruction set.}
+% \cvitem{MOS 6502 Emulator}{\url{https://github.com/akydd/nes_emulator}. Implemented a MOS 6502 CPU emulator in C supporting the full 8-bit instruction set.}
+
+
+\section{Education}
+\cventry{}{Master of Science}{University of
+  Alberta}{Edmonton}{}{Pure
+  Mathematics} % arguments 3 to 6 can be left empty
+\cventry{}{Bachelor of Science}{University of
+  Alberta}{Edmonton}{}{Mathematics Specialization}
 
 %\newpage
 

@@ -1,0 +1,87 @@
+\documentclass[10pt]{article}
+
+\usepackage[margin=0.85in, letterpaper]{geometry}
+\setcounter{secnumdepth}{0}
+\usepackage{titlesec}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\titleformat{\section}{\large\bfseries\uppercase}{}{}{}[\titlerule]
+\titleformat*{\subsubsection}{\large\itshape}
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep,left=0pt .. \parindent}
+\pagestyle{empty}
+\pdfgentounicode=1
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+\begin{document}
+
+\input{contact.tex}
+
+\section{Summary}
+Senior Software Engineer with 10+ years of experience building and operating cloud-native infrastructure on AWS. Proven track record delivering infrastructure as code with Terraform, managing Kubernetes workloads, designing event-driven serverless pipelines, and maintaining CI/CD systems. Strong Go background enables deep platform engineering and internal tooling work alongside infrastructure.
+
+\section{Key Skills}
+\begin{description}[itemsep=0pt]
+  \item[Cloud] AWS (ECS Fargate, Lambda, RDS, S3, CloudFront, ACM, ALB, API Gateway, DynamoDB, IAM, Bedrock, SNS), GCP (Pub/Sub)
+  \item[IaC \& Containers] Terraform, Kubernetes, Helm, Docker
+  \item[CI/CD] GitHub Actions, CircleCI, Jenkins
+  \item[Observability] CloudWatch alarms, SNS alerting
+  \item[Languages] Go, TypeScript, SQL
+  \item[Databases] PostgreSQL, MySQL, MongoDB, Cassandra
+\end{description}
+
+\section{Experience}
+
+\subsection{Looka \hfill Toronto, Ontario}
+\subsubsection{Senior Fullstack Engineer \hfill 10/2022 -- 09/2025}
+\begin{itemize}
+  \item Laid off due to company-wide reduction in force.
+  \item Designed and implemented an AWS-based website hosting platform, orchestrating provisioning across S3, CloudFront, ACM, IAM, and an external domain registrar, balancing scalability, reliability, and operational simplicity across multiple external dependencies.
+  \item Built a Google Workspace reseller integration coordinating Stripe billing, Google APIs, and GCP Pub/Sub events to drive a multi-step provisioning lifecycle in an event-driven architecture, adopted by \textasciitilde850 customers.
+  \item Designed and implemented a shared asynchronous job processing system to handle long-running provisioning workflows spanning minutes to days, decoupling external integrations from request/response cycles. Implemented concurrency control, retry strategies with exponential backoff, and failure recovery.
+  \item Engineered internal observability and operational tooling (SQL and TypeScript-based) to surface job state, failures, and system health, enabling the 5-person Customer Support team to independently diagnose issues and reducing engineering escalations.
+  \item Managed Kubernetes cluster operations: container configuration, Helm chart deployments, node lifecycle management, and secrets management.
+  \item Maintained CI/CD pipelines (CircleCI) to support automated testing and reliable deployments.
+\end{itemize}
+
+\subsection{Betable \hfill Edmonton, Alberta}
+\subsubsection{Senior Software Engineer \hfill 09/2021 -- 10/2022}
+\begin{itemize}
+  \item Contributed to an Adyen payment integration, implementing a Go microservice within a distributed system handling thousands of real-money transactions per day, with a focus on reliability and correctness when interacting with external payment systems.
+  \item Defined service boundaries and backend workflows to support safe rollout and lifecycle management of externally integrated systems, improving operational scalability.
+\end{itemize}
+
+\subsection{Gamesys Canada \hfill Edmonton, Alberta}
+\subsubsection{Developer \hfill 08/2013 -- 10/2015}
+\begin{itemize}
+  \item Laid off due to company restructuring.
+  \item Built a Backbone.js single-page application for managing online poker tournaments, communicating with an event-driven microservice backend using Apache Kafka.
+\end{itemize}
+
+\section{Cloud Projects}
+
+\subsection{AWS Cloud-Deployed Go Backend}
+\begin{itemize}
+  \item \url{https://github.com/akydd/realworld-backend-go}
+  \item Deployed to ECS Fargate behind an ALB for high availability and zero-downtime rolling deploys; Application Auto Scaling adjusts task count under load.
+  \item RDS PostgreSQL in private subnets; secrets in AWS Secrets Manager (never in source control or CI).
+  \item CI/CD via GitHub Actions with OIDC-based AWS authentication --- no long-lived credentials in the pipeline.
+  \item Observability via CloudWatch alarms and SNS alerts covering ECS, RDS, and ALB metrics.
+  \item Full infrastructure provisioned as code; hexagonal architecture keeps business logic decoupled from AWS dependencies.
+\end{itemize}
+
+\subsection{AI-assisted Log Anomaly Detection using AWS Bedrock (Claude)}
+\begin{itemize}
+  \item \url{https://github.com/akydd/log-anomale-detector}
+  \item Serverless, event-driven pipeline: simulates HTTP access logs, injects anomalous traffic, classifies anomalies in real time via AWS Bedrock (Claude), and delivers alerts via SNS.
+  \item Stack: Lambda (serverless compute), API Gateway (authenticated endpoints), DynamoDB (low-latency log storage), S3 (dashboard hosting), Terraform (infrastructure provisioning).
+\end{itemize}
+
+\section{Education}
+
+\subsection{University of Alberta $|$ \normalfont\textit{Master of Science --- Pure Mathematics}}
+\subsection{University of Alberta $|$ \normalfont\textit{Bachelor of Science --- Mathematics Specialization}}
+
+\end{document}

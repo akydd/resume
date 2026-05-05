@@ -1,0 +1,104 @@
+\documentclass[10pt]{article}
+
+\usepackage[margin=0.85in, letterpaper]{geometry}
+\setcounter{secnumdepth}{0}
+\usepackage{titlesec}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\titleformat{\section}{\large\bfseries\uppercase}{}{}{}[\titlerule]
+\titleformat*{\subsubsection}{\large\itshape}
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep,left=0pt .. \parindent}
+\pagestyle{empty}
+\pdfgentounicode=1
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+\begin{document}
+
+\input{contact.tex}
+
+\section{Summary}
+Senior Software Engineer with 10+ years of experience designing and building backend systems and scalable web applications in startups and large organizations. Specialized in Go, APIs, and cloud-based infrastructure, with strong experience building scalable services and internal tools that improve operational efficiency. Recent work includes leading backend development for major features in a SaaS platform, integrating Google Workspace and AWS infrastructure, and developing internal systems enabling non-engineers to manage complex workflows.
+
+\section{Key Skills}
+\begin{description}[itemsep=0pt]
+  \item[Languages] Go, TypeScript, Clojure, SQL
+  \item[Backend] GraphQL, REST APIs, microservices
+  \item[Frontend] React, Redux, TypeScript, ClojureScript
+  \item[Infrastructure] AWS (S3, CloudFront, ACM, ECS Fargate, RDS, ALB, Lambda, API Gateway, DynamoDB, IAM, Bedrock), Terraform, Kubernetes, Helm, Docker, Apache Kafka
+  \item[Databases] PostgreSQL, MySQL, MongoDB, Cassandra
+  \item[Tools] Claude Code, Git, GitHub Actions, Jenkins, CircleCI
+  \item[Integrations] Stripe, Adyen, Google Workspace
+\end{description}
+
+\section{Experience}
+
+\subsection{Looka \hfill Toronto, Ontario}
+\subsubsection{Senior Fullstack Engineer \hfill 10/2022 -- 09/2025}
+\begin{itemize}
+  \item Laid off due to company-wide reduction in force.
+  \item Led backend architecture and implementation (Go, GraphQL) for two major customer-facing features in Looka's flagship SaaS platform:
+    \begin{itemize}
+      \item Google Workspace Reseller integration adopted by \textasciitilde850 customers, allowing them to purchase and manage subscriptions directly within Looka. Integrated Google Places Autocomplete for address validation, reducing incomplete-address Customer Support issues from several per week to several per month.
+      \item AWS-based website hosting platform enabling users to deploy branded websites, built on S3, CloudFront, ACM, IAM, and an external domain registrar.
+    \end{itemize}
+  \item Designed and implemented a shared asynchronous job processing system to handle long-running provisioning workflows spanning minutes to days, decoupling external integrations from request/response cycles. Implemented concurrency control, retry strategies with exponential backoff, and failure recovery.
+  \item Implemented a drop-shadow feature for Looka's SVG-based graphic editor.
+  \item Developed TypeScript automation tools for the Customer Support team, reducing engineering involvement in support cases and improving ticket resolution speed.
+  \item Managed Kubernetes cluster operations: container configuration, Helm chart deployments, node lifecycle management, and secrets management.
+\end{itemize}
+
+\subsection{Betable \hfill Edmonton, Alberta}
+\subsubsection{Senior Software Engineer \hfill 09/2021 -- 10/2022}
+\begin{itemize}
+  \item Designed and delivered a React/Redux application with supporting backend REST endpoints (Go) for managing third-party online casino games, replacing a manual engineering workflow and enabling non-engineers to manage game deployments independently, saving \textasciitilde20 hours of engineering time per month.
+  \item Contributed to an Adyen payment integration handling thousands of real-money transactions per day, implementing a Go microservice backend with Angular and React frontends.
+\end{itemize}
+
+\subsubsection{Software Engineer \hfill 01/2016 -- 09/2021}
+\begin{itemize}
+  \item Developed internal marketing tools enabling non-technical teams to create, edit, and schedule promotions, bonuses, and game offers.
+  \item Implemented backend services and features (including Go-based components) alongside React/Redux front-end development.
+\end{itemize}
+
+\subsection{Gamesys Canada \hfill Edmonton, Alberta}
+\subsubsection{Developer \hfill 08/2013 -- 10/2015}
+\begin{itemize}
+  \item Laid off due to company restructuring.
+  \item Built a Backbone.js single-page application for managing online poker tournaments, communicating with an event-driven microservice backend using Apache Kafka.
+\end{itemize}
+
+\section{Selected Projects}
+
+\subsection{AI-assisted anomaly classification using AWS Bedrock (Claude)}
+\begin{itemize}
+    \item \url{https://github.com/akydd/log-anomale-detector}
+  \item Serverless, event-driven log processing system: simulates HTTP access logs, injects anomalous traffic, classifies anomalies in real time via AWS Bedrock (Claude), and delivers alerts via SNS.
+  \item Stack: Lambda (serverless compute), API Gateway (authenticated endpoints), DynamoDB (low-latency log storage), S3 (dashboard hosting), Terraform (infrastructure provisioning).
+\end{itemize}
+
+\subsection{AWS Cloud-Deployed Go Backend}
+\begin{itemize}
+  \item \url{https://github.com/akydd/realworld-backend-go}
+  \item Engineered the RealWorld backend API in Go using hexagonal architecture, keeping business logic fully decoupled from infrastructure.
+  \item Deployed to ECS Fargate behind an ALB for high availability and zero-downtime rolling deploys; Application Auto Scaling adjusts task count under load.
+  \item RDS PostgreSQL in private subnets; secrets in AWS Secrets Manager (never in source control or CI).
+  \item CI/CD via GitHub Actions with OIDC-based AWS authentication --- no long-lived credentials in the pipeline.
+  \item Developed using a spec-driven workflow with Claude Code: features written as plain-English specifications, then implemented and verified against the full Hurl integration test suite.
+\end{itemize}
+
+\subsection{RealWorld Clojure API}
+\begin{itemize}
+    \item \url{https://github.com/akydd/realworld-clojure}
+  \item Production-style REST API implementing the RealWorld spec in Clojure, applying functional design principles and idiomatic patterns.
+  \item Demonstrates backend architecture, JWT authentication flows, and practical Clojure in real-world service development.
+\end{itemize}
+
+\section{Education}
+
+\subsection{University of Alberta $|$ \normalfont\textit{Master of Science --- Pure Mathematics} \hfill 2005}
+\subsection{University of Alberta $|$ \normalfont\textit{Bachelor of Science --- Mathematics Specialization} \hfill 2002}
+
+\end{document}

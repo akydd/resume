@@ -1,27 +1,27 @@
 ---
-name: cover-letter-url
+name: cover-letter
 description: Generate cover letter text for a job at the provided url.
-argument-hint: <url>
+argument-hint: <resume> <url>
 allowed-tools: Read, Glob, Bash, Web Fetch
 ---
 
-Generate a cover letter for the job at url `$ARGUMENTS`.
+Generate a cover letter for the job at url `$1`, using the reusme at `$0` for a reference of work experience.
 
 **Do not use the Agent tool for any step. Call all tools directly.**
 
 ## Steps
 
 1. Fetch the job posting using two strategies in order:
-   a. First try the WebFetch tool on `$ARGUMENTS`.
+   a. First try the WebFetch tool on `$1`.
    b. If that returns a 403, empty body, or a login/bot-block page, fall back to the headless browser script:
       ```bash
-      node /Users/alan/projects/akydd/resume/.claude/skills/cover-letter/fetch-page.mjs "$ARGUMENTS"
+      node /Users/alan/projects/akydd/resume/.claude/skills/cover-letter/fetch-page.mjs "$1"
       ```
    c. If the script exits with code 1 (prints `BLOCKED` to stderr), the site is bot-protected. Tell the user the fetch was blocked and ask them to either:
       - Paste the job description directly into the chat, or
       - Provide the URL of the job on the company's own careers page instead of a job board.
       Then stop and wait for the user.
-3. Read `@moderncv/resume_v2.pdf` to extract the candidate's experience.
+3. Read resume at `$0` to extract the candidate's experience.
 4. Write the cover letter using the guidelines below.
 
 ## Cover letter guidelines
@@ -53,7 +53,7 @@ Generate a cover letter for the job at url `$ARGUMENTS`.
 
 \firstname{Alan}
 \familyname{Kydd}
-\title{Senior Software Engineer}
+% \title{Senior Software Engineer}
 \email{kydd.alan.g@gmail.com}
 \sethintscolumntowidth{kydd.alan.g@gmail.com}
 \social[github]{akydd}

@@ -1,0 +1,106 @@
+\documentclass[10pt]{article}
+
+\usepackage[margin=0.85in, letterpaper]{geometry}
+\setcounter{secnumdepth}{0}
+\usepackage{titlesec}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\titleformat{\section}{\large\bfseries\uppercase}{}{}{}[\titlerule]
+\titleformat*{\subsubsection}{\large\itshape}
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep,left=0pt .. \parindent}
+\pagestyle{empty}
+\pdfgentounicode=1
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+\begin{document}
+
+\input{contact.tex}
+
+\section{Summary}
+Senior Backend Engineer with 10+ years of experience building distributed systems, APIs, and cloud-native platforms. Specialized in Go, event-driven architectures, and asynchronous processing with a focus on reliability and scalability.
+
+\section{Key Skills}
+\begin{description}[itemsep=0pt]
+  \item[Backend] Go, TypeScript, GraphQL, REST APIs, microservices, SQL
+  \item[Systems] Distributed systems, event-driven architecture, async processing, concurrency
+  \item[Infrastructure] AWS (ECS Fargate, Lambda, RDS, S3, CloudFront, IAM, Bedrock), Terraform, Kubernetes
+  \item[Databases] PostgreSQL, MySQL, MongoDB, Cassandra
+\end{description}
+
+\section{Experience}
+
+\subsection{Looka \hfill Toronto, Ontario}
+\subsubsection{Senior Fullstack Engineer \hfill 10/2022 -- 09/2025}
+\begin{itemize}
+  \item Laid off due to company-wide reduction in force.
+  \item Owned the end-to-end backend architecture and implementation in Go for two major customer-facing platform features, including API design (GraphQL), database schema design, and distributed workflow orchestration:
+    \begin{itemize}
+      \item Google Workspace reseller integration adopted by \textasciitilde850 customers: coordinated Stripe billing, Google APIs, and Pub/Sub events to drive a multi-step provisioning lifecycle in an event-driven architecture. Integrated Google Places Autocomplete for address validation, reducing incomplete-address Customer Support issues from several per week to several per month.
+      \item AWS-based website hosting platform: orchestrated provisioning across S3, CloudFront, ACM, IAM, and an external domain registrar, balancing scalability, reliability, and operational simplicity across multiple external dependencies.
+    \end{itemize}
+  \item Designed and implemented a shared asynchronous job processing system to handle long-running provisioning workflows spanning minutes to days, decoupling external integrations from request/response cycles. Implemented concurrency control, retry strategies with exponential backoff, and failure recovery, improving system reliability, scalability, and user experience.
+  \item Engineered internal observability and operational tooling (SQL and TypeScript-based) to surface job state, failures, and system health, enabling the 5-person Customer Service team to independently diagnose issues and reducing engineering escalations.
+  \item Managed Kubernetes cluster operations: container configuration, Helm chart deployments, node lifecycle management, and secrets management.
+  \item Maintained CI/CD pipelines (CircleCI) to support automated testing and reliable deployments.
+\end{itemize}
+
+\subsection{Betable \hfill Edmonton, Alberta}
+\subsubsection{Senior Software Engineer \hfill 09/2021 -- 10/2022}
+\begin{itemize}
+  \item Designed and delivered a backend-driven system (Go + REST APIs) and supporting React application for managing third-party online casino game integrations, replacing a manual engineering workflow and enabling non-engineers to operate deployments independently, saving \textasciitilde20 hours of engineering time per month.
+  \item Defined service boundaries and backend workflows to support safe rollout and lifecycle management of externally integrated systems, improving operational scalability and reducing engineering involvement.
+  \item Contributed to an Adyen payment integration, implementing a Go microservice within a distributed system handling thousands of real-money transactions per day, with a focus on reliability and correctness when interacting with external payment systems.
+\end{itemize}
+
+\subsubsection{Software Engineer \hfill 01/2016 -- 09/2021}
+\begin{itemize}
+  \item Developed backend services and internal tooling to support marketing workflows (promotions, bonuses, and offers), enabling non-technical teams to manage configuration and scheduling without engineering intervention.
+  \item Implemented Go-based backend components alongside React/Redux front-end systems, contributing to the evolution toward a more service-oriented architecture.
+\end{itemize}
+
+\subsection{Gamesys Canada \hfill Edmonton, Alberta}
+\subsubsection{Developer \hfill 08/2013 -- 10/2015}
+\begin{itemize}
+  \item Laid off due to company restructuring.
+  \item Built a Backbone.js single-page application for managing online poker tournaments, communicating with an event-driven microservice backend using Apache Kafka.
+  \item Contributed to a GWT analytics application used to investigate poker game fraud and analyze player win/loss data.
+\end{itemize}
+
+\section{Selected Systems \& Backend Projects}
+
+\subsection{AI-assisted anomaly classification using AWS Bedrock (Claude)}
+\begin{itemize}
+  \item \url{https://github.com/akydd/log-anomale-detector}
+  \item Serverless, event-driven log processing system: simulates HTTP access logs, injects anomalous traffic, classifies anomalies in real time via AWS Bedrock (Claude), and delivers alerts via SNS.
+  \item Stack: Lambda (serverless compute), API Gateway (authenticated endpoints), DynamoDB (low-latency log storage), S3 (dashboard hosting), Terraform (infrastructure provisioning).
+\end{itemize}
+
+\subsection{AWS Cloud-Deployed Go Backend}
+
+\begin{itemize}
+  \item \url{https://github.com/akydd/realworld-backend-go}
+  \item Engineered the RealWorld backend API in Go using hexagonal architecture, keeping business logic fully decoupled from infrastructure.
+  \item Deployed to ECS Fargate behind an ALB for high availability and zero-downtime rolling deploys; Application Auto Scaling adjusts task count under load.
+  \item RDS PostgreSQL in private subnets; secrets in AWS Secrets Manager (never in source control or CI).
+  \item CI/CD via GitHub Actions with OIDC-based AWS authentication --- no long-lived credentials in the pipeline.
+  \item Observability via CloudWatch alarms and SNS alerts covering ECS, RDS, and ALB metrics.
+  \item Developed using a spec-driven workflow with Claude Code: features written as plain-English specifications, then implemented and verified against the full Hurl integration test suite.
+\end{itemize}
+
+\subsection{RealWorld Clojure API}
+
+\begin{itemize}
+  \item \url{https://github.com/akydd/realworld-clojure}
+  \item Production-style REST API implementing the RealWorld spec in Clojure, applying functional design principles and idiomatic patterns.
+  \item Demonstrates backend architecture, JWT authentication flows, and practical Clojure in real-world service development.
+\end{itemize}
+
+\section{Education}
+
+\subsection{University of Alberta $|$ \normalfont\textit{Master of Science --- Pure Mathematics}}
+\subsection{University of Alberta $|$ \normalfont\textit{Bachelor of Science --- Mathematics Specialization}}
+
+\end{document}
