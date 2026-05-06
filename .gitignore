@@ -1,4 +1,7 @@
 **/node_modules/
+.DS_Store
+**/contact.tex
+**/letter_*.pdf
 
 # LaTeX build artifacts
 moderncv/*.aux
@@ -8,3 +11,7 @@ moderncv/*.pdf
 moderncv/*.tex~
 moderncv/#*.tex#
 moderncv/_region_.tex
+rover-resume/*.aux
+rover-resume/*.log
+rover-resume/*.out
+rover-resume/*~

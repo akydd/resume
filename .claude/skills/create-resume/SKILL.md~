@@ -1,0 +1,75 @@
+---
+name: create-resume
+description: Generate a resume and cover letter for the pasted in job description.
+argument-hint: <description>
+allowed-tools: Read, Write, Bash
+---
+
+# Create Resume
+
+## Instructions
+
+### Step 1:  Compare the job description to the source data
+Compare the work experience in @resume_all.md to all the skills listed in `$1`.
+
+### Step 2: Identify skill gaps
+If all skills listed in `$1` are already in @resume_all.md, so that no skills gaps are detected, then skip to Step 3.
+
+For each gap, prompt the user to either provide some work experience that closes the gap, or to skip.
+Iterate on this until you determine that the gap is sufficiently closed, or the user skips.
+
+Take the user-provided experience and add it to @resume_all.md appropriately, wording it nicely, so that the user doesn't have to add the same information in successive runs of this skill.
+
+### Step 3: Create the resume
+
+1. Using the updated data from @resume_all.tex, create a latex file named resume_{company}.tex based on the template below, where {company} is the name of company offering the job, with the generated text inserted appropriately. File should be located in project folder @rover-resume. If there's already a file with that name name, add an incremental counter to the file prefix.
+2. Compile: `pdflatex -output-directory=rover-resume rover-resume/resume_company.tex`
+3. If the compiled resume is over 2 pages long, trim down the least important data and recompile until the resume is 2 pages long.
+
+#### Resume template
+Use the file @rover-resume/templates/base\ rover/base-rover.tex
+
+### Step 4: Create the cover letter
+
+1. Create a latex file named letter_{company}.tex based on the template and guidelines below, where {company} is the name of company offering the job, with the generated text inserted appropriately. File should be located in project folder @rover-resume. If there's already a file with that name name, add an incremental counter to the file prefix.
+2. Compile: `pdflatex -output-directory=rover-resume rover-resume/letter_company.tex`
+
+
+#### Cover letter text guidelines
+- 3–4 paragraphs, under 350 words
+- Professional and direct tone
+- Include today's date
+- Opening: name the specific role and company, express genuine interest
+- Body: connect the candidate's actual experience (from the resume) to the job's required tech stack and responsibilities; reference nice-to-have tech only if supported by the resume
+- Closing: one confident sentence, no flowery sign-off
+- Do not invent experience not present in the resume
+- Output is meant to be read as prose, but inserted into a latex document. Special characters must be handled accordingly, but don't use any other formatting (bullet points, markdown, etc).
+- Do not generate text that includes double or triple dashes: "--" or "---".
+
+#### Cover letter template
+```latex
+\documentclass[11pt,letterpaper]{letter}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+\signature{Alan Kydd}
+\address{kydd.alan.g@gmail.com \\ 780 232 7870}
+
+\longindentation=0pt
+\begin{document}
+
+\begin{letter}{}
+
+\opening{To whom it may concern,}
+
+% letter content here
+
+\closing{Sincerely,}
+
+\end{letter}
+\end{document}
+
+```
